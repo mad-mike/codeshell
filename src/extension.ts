@@ -21,14 +21,14 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 		
-		if (!vscode.workspace.rootPath) {
-			vscode.window.showWarningMessage('You have to open a folder first');
-			return;
+        var workingDirectory = process.env.USERPROFILE;
+		if (vscode.workspace.rootPath) {
+            workingDirectory = vscode.workspace.rootPath;
 		}
 		if (additionalCommands == null) {
 			additionalCommands = '';
 		}
-		var cmd = 'start powershell.exe ' + additionalCommands + ' -noexit -command \"cd \'' + vscode.workspace.rootPath + '\'\"';
+		var cmd = 'start powershell.exe ' + additionalCommands + ' -noexit -command \"cd \'' + workingDirectory + '\'\"';
 		exec(cmd);
 	};
 	

@@ -6,6 +6,8 @@ Just look for the **Start PowerShell** command.
 _The PowerShell instance will be started using your system's default ExecutionPolicy, if you need an unrestricted shell use the **Start PowerShell (Unrestricted)** command._
 
 ##Changelog
+>* 0.2.3
+>  * Start the shell in the user's home directory if no workspace is loaded
 >* 0.2.1
 >  * Fixed a bug that prevented the use of the Unrestricted command until you started at least one normal instance
 >  * Added key bindings for both commands
